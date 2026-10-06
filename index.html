@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>YT Queue</title>
+  <meta name="description" content="Очередь видео с YouTube-подписок">
+  <meta name="theme-color" content="#0f0f10">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><img src="icons/icon.svg" alt="" width="26" height="26"><span>YT Queue</span></div>
+    <nav class="nav" id="nav">
+      <a href="#/queue" data-view="queue"><span class="ico">▶</span><span>Очередь</span></a>
+      <a href="#/channels" data-view="channels"><span class="ico">☰</span><span>Каналы</span></a>
+      <a href="#/queues" data-view="queues"><span class="ico">⧉</span><span>Очереди</span></a>
+      <a href="#/settings" data-view="settings"><span class="ico">⚙</span><span>Настройки</span></a>
+    </nav>
+    <button class="btn icon" id="refreshBtn" title="Обновить">⟳</button>
+  </header>
+
+  <main id="view"></main>
+
+  <div class="modal" id="player" hidden>
+    <div class="modal-box player-box">
+      <div class="player-frame"><iframe id="playerFrame" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+      <div class="player-bar">
+        <div class="player-title" id="playerTitle"></div>
+        <div class="row gap">
+          <a class="btn" id="playerYt" target="_blank" rel="noopener">Открыть на YouTube</a>
+          <button class="btn primary" id="playerWatched">✓ Просмотрено</button>
+          <button class="btn" id="playerClose">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" hidden></div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
